@@ -1,29 +1,36 @@
 @echo off
-title Serial Checker
-mode con: cols=120 lines=50
-
-echo [92mDisk
-echo [92m------------[91m
+title OVERDRIVE
+mode con: cols=100 lines=50
+color e
+echo.
+:1
+echo Overdrive Checker
+echo.
+color e
+echo [90mDisk
+echo [90m========================[95m
 wmic diskdrive get serialnumber
-echo [92mMotherboard
-echo [92m------------[91m
+echo [90mMotherboard
+echo [90m========================[95m
 wmic baseboard get serialnumber
-echo [92mSMBios
-echo [92m------------[91m
+echo [90mSMBios
+echo [90m========================[95m
 wmic path win32_computersystemproduct get uuid
-echo [92mGPU
-echo [92m------------[91m
+echo [90mGPU 
+echo [90m========================[95m
 wmic PATH Win32_VideoController GET Description,PNPDeviceID
-echo [92mRAM
-echo [92m------------[91m
+echo [90mRAM
+echo [90m========================[95m
 wmic memorychip get serialnumber
-echo [92mBios
-echo [92m------------[91m
+echo [90mBios
+echo [90m========================[95m
 wmic csproduct get uuid
-echo [92mCPU
-echo [92m------------[91m
+echo [90mCPU
+echo [90m========================[95m
 wmic cpu get processorid
-echo [92mMacAddress
-echo [92m------------[91m
+echo [90mMac 
+echo [90m========================[95m
 wmic path Win32_NetworkAdapter where "PNPDeviceID like '%%PCI%%' AND NetConnectionStatus=2 AND AdapterTypeID='0'" get MacAddress
 pause
+cls
+goto 1
