@@ -4,7 +4,7 @@ mode con: cols=100 lines=50
 color e
 echo.
 :1
-echo Overdrive Checker
+echo Aremi.club Checker
 echo.
 color e
 echo [90mDisk
